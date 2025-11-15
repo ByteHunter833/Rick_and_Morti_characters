@@ -43,8 +43,8 @@ dependencies:
 1. Клонируйте репозиторий:
 
 ```bash
-git clone <your-repo-url>
-cd rick_morty_app
+git clone https://github.com/ByteHunter833/Rick_and_Morti_characters.git
+cd Rick_and_Morti_characters
 ```
 
 2. Установите зависимости:
@@ -71,9 +71,9 @@ lib/
 │   └── database_service.dart # Работа с БД
 ├── providers/               # State management
 │   └── character_provider.dart
-|   themes/
+|   themes/                   # Theme
 |   └──light_mode.dart
-    └──dark_mode.dart  # Theme
+    └──dark_mode.dart
 ├── screens/                 # Экраны
 │   ├── characters_screen.dart
 │   └── favorites_screen.dart
