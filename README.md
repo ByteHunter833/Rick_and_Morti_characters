@@ -105,6 +105,15 @@ lib/
 - Переключение через иконку в AppBar
 - Настройка сохраняется в SharedPreferences
 
+## Screenshots
+
+## Screenshots
+
+| Dark Mode                                                             | Light Mode                                                             |
+| --------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| ![Dark Mode Characters](assets/screenshots/dark_mode_characters.png)  | ![Light Mode Characters](assets/screenshots/light_mode_characters.png) |
+| ![Favorites Dark](assets/screenshots/favourites_with_description.png) | ![Favorites Light](assets/screenshots/favourites_light_mode.png)       |
+
 ## API
 
 Приложение использует [Rick and Morty API](https://rickandmortyapi.com/documentation/)
