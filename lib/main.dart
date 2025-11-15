@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rika_and_morti_characters/providers/characyter_provider.dart';
 import 'package:rika_and_morti_characters/screens/main_screen.dart';
+import 'package:rika_and_morti_characters/themes/dark_mode.dart';
+import 'package:rika_and_morti_characters/themes/light_mode.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -9,7 +11,12 @@ void main() async {
   final prefs = await SharedPreferences.getInstance();
   final isDarkMode = prefs.getBool('isDarkMode') ?? false;
 
-  runApp(MyApp(isDarkMode: isDarkMode));
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => CharacterProvider(),
+      child: MyApp(isDarkMode: isDarkMode),
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -40,32 +47,13 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => CharacterProvider(),
-      child: MaterialApp(
-        title: 'Rick and Morty',
-        debugShowCheckedModeBanner: false,
-        themeMode: _isDarkMode ? ThemeMode.dark : ThemeMode.light,
-        theme: ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.light,
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.green,
-            brightness: Brightness.light,
-          ),
-          appBarTheme: const AppBarTheme(centerTitle: true, elevation: 0),
-        ),
-        darkTheme: ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.dark,
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.green,
-            brightness: Brightness.dark,
-          ),
-          appBarTheme: const AppBarTheme(centerTitle: true, elevation: 0),
-        ),
-        home: MainScreen(isDarkMode: _isDarkMode, onThemeToggle: _toggleTheme),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      themeMode: _isDarkMode ? ThemeMode.dark : ThemeMode.light,
+      theme: lightMode,
+
+      darkTheme: darkMode,
+      home: MainScreen(isDarkMode: _isDarkMode, onThemeToggle: _toggleTheme),
     );
   }
 }

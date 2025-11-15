@@ -1,4 +1,4 @@
-# rika_and_morti_characters
+# rick_and_morti_characters
 
 Мобильное приложение на Flutter для просмотра персонажей мультсериала "Рик и Морти" с использованием публичного API.
 
@@ -71,6 +71,9 @@ lib/
 │   └── database_service.dart # Работа с БД
 ├── providers/               # State management
 │   └── character_provider.dart
+|   themes/
+|   └──light_mode.dart
+    └──dark_mode.dart  # Theme
 ├── screens/                 # Экраны
 │   ├── characters_screen.dart
 │   └── favorites_screen.dart
@@ -110,7 +113,7 @@ lib/
 
 ## Автор
 
-Ваше имя
+ByteHunter833
 
 ## Лицензия
 
